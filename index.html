@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- optional: Font Awesome for the search‑icon -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
-    <div class="mdiv">
-        <div class="weather_app">
-            <h2 align="conter"> weathr forcast</h2>
-            <div class="ip">
-                <input type="text" id="user_text">
-                <button onclick="getWeatherData"> <img src="" alt=""></button>
-            </div>
-            <div class="inro" align="center">
-                <img src="" alt="" class="weather_img">
-                <h1 id="temp"> 27c</h1>
-                <h2 id="city">PUNE</h2>
-            </div>
-            <div class="info2">
-                <div class="humidity"><img src="" alt=""></div>
-                <h3>HUMIDITY</h3>
-                <h4 id="humidity_info"> 50%</h4>
-            </div>
-            <div class="wind">
-                <img src="" alt="" class="humi">
-                <h3>WIND</h3>
-                <h4 id="wind_info">4 km/h</h4>
-            </div>
+  <main class="wrapper">
+    <section class="card">
+      <h2 class="title" style="color: white;" >Weather&nbsp;Forecast</h2>
+
+      <!-- SEARCH FORM (Enter works automatically) -->
+      <form id="searchForm" class="search">
+        <input type="text" id="cityInput" placeholder="Enter city e.g. Pune" required />
+        <button type="submit" class="btn">
+          <i class="fa-solid fa-magnifying-glass">.</button></i>
+        </button>
+      </form>
+
+      <!-- MAIN INFO -->
+      <div class="mainInfo">
+        <img id="icon" class="icon" alt="" />
+        <h1 id="temp">--°C</h1>
+        <h2 id="city">--</h2>
+      </div>
+
+      <!-- EXTRA INFO -->
+      <div class="extra">
+        <div class="metric">
+          <img src="Assets/clouds.png" alt="" />
+          <p class="label">Humidity</p>
+          <p id="humidity">--%</p>
         </div>
-    </div>
-    <script src="script.js"></script>
+
+        <div class="metric">
+          <img src="Assets/wind.jpeg" alt="" />
+          <p class="label">Wind</p>
+          <p id="wind">-- km/h</p>
+        </div>
+      </div>
+
+      <!-- PLACE FOR ERRORS -->
+      <p id="error" class="error"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
